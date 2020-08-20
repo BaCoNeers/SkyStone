@@ -36,6 +36,16 @@ public class BlueFoundation extends BaconOpMode {
         tasks.add(new DriveXYRTask(this, getDriveTime(110), mecanumDrive, 0.0, 0.3, 0.0));
 
 
+        // LiftTask lift = new LiftTask();
+        // lift.update();
+
+        /*
+        new LiftTask();
+
+
+         */
+
+
     }
 
     //Return drive time from distance (in cm)
