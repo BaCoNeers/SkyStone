@@ -57,6 +57,14 @@ public class JeffChallengeDrive extends BaconComponent {
                config.rightMotor.setPower(opmode.gamepad1.left_stick_y);
            }
 
+            Range.clip(number, minimum, maximum)
+
+            e.g.:
+            double number = opmode.gamepad1.left_stick_y;
+            Range.clip(number, 0, 0.8);
+            config.rightMotor.setPower(number);
+
+            The variable number now cannot be greater than 0.8 (and hence the maximum power of the motor is 0.8)
 
            */
            //Right stick right and left stick up. Left motor right x co-ord and right motor is x co-ord - 0.3
@@ -64,6 +72,7 @@ public class JeffChallengeDrive extends BaconComponent {
                if(opmode.gamepad1.right_stick_x < 0.4)
                config.leftMotor.setPower(opmode.gamepad1.left_stick_y);
                config.rightMotor.setPower(1 - opmode.gamepad1.right_stick_x);
+
            }
            //Right stick right and left stick down. Right motor right x co-ord and left motor is x co-ord - 0.3
         if(opmode.gamepad1.right_stick_x > 0 && opmode.gamepad1.left_stick_y < 0) {
@@ -89,5 +98,7 @@ public class JeffChallengeDrive extends BaconComponent {
                config.leftMotor.setPower(opmode.gamepad1.left_stick_y);
                config.rightMotor.setPower(opmode.gamepad1.left_stick_y);
            }
+
+
     }
 }
